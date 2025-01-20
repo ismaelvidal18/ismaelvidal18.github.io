@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proyecto La Carrera Panamericana Autonomous Drive - Innovación en vehículos autónomos.">
+    <meta name="keywords" content="autonomous drive, tecnología, equipo, patrocinadores, La Carrera Panamericana">
+    <title>Campus City</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            scroll-behavior: smooth;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: black;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .logo img {
+            height: 70px;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 10px 15px;
+            text-align: center;
+            border-bottom: 2px solid transparent;
+            white-space: nowrap;
+        }
+
+        nav a:hover {
+            background-color: white;
+            color: black;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+
+        nav a.active {
+            border-bottom: 2px solid white;
+        }
+
+        /* Main Banner */
+        .banner {
+            position: relative;
+            text-align: center;
+            color: white;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .banner video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(40%);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .banner .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 90%;
+        }
+
+        .banner .text-overlay h1 {
+            font-size: 4.5rem;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+            line-height: 1.2;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+        }
+
+        /* Project Section Video Background */
+        #project {
+            position: relative;
+            overflow: hidden;
+            height: 100vh; /* Asegura que ocupe toda la pantalla */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #project .video-background {
+            position: absolute;
+            filter: brightness(30%);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        #project .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #project .content-overlay {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        #project h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        #project p {
+            font-size: 2rem;
+            font-family: 'Poppins', sans-serif;
+            max-width: 800px;
+            margin: 0 auto; 
+        }
+
+        .carrusel {
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
+        overflow: hidden;
+        position: relative;
+        }
+        .contenedor {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        }
+        .parrafo {
+        min-width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        font-size: 2rem;
+        }
+    
+    .boton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 36px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .boton:hover {
+        transform: scale(1.2);
+    }
+
+    .izquierda {
+        left: 200px; /* Moved closer to the left */
+    }
+
+    .derecha {
+        right: 200px; /* Moved closer to the right */
+    }
+
+        /* Section Styles */
+        section {
+            padding: 100px 20px;
+            height: 100vh;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #project, #gallery, #model, #technology, #team, #sponsor {
+            background-color: #000000;
+        }
+
+        section h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            text-align: center;
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4);
+        }
+
+        /* Team Section Styles */
+        #team .gallery {
+            display: grid; /* Cambiar flex a grid para controlar la cantidad de imágenes por fila */
+            grid-template-columns: repeat(4, 1fr); /* Esto asegura que haya 4 imágenes por fila */
+            gap: 20px; /* Espaciado entre las imágenes */
+            justify-items: center;
+        }
+
+        #team .image-container {
+            position: relative;
+            width: 100%;
+            max-width: 150px; /* Ajustar el tamaño máximo de las imágenes */
+            height: 170px;
+            overflow: hidden; /* Para que las imágenes no se desborden */
+        }
+
+        #team .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animaciones igual a las de Gallery */
+        }
+
+        #team .image-container img:hover {
+            transform: scale(1.1); /* Escalar la imagen al pasar el cursor */
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4); /* Efecto de sombra */
+        }
+
+        #team .overlay {
+            position: absolute;
+            font-family: 'Poppins', sans-serif;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 1rem;
+            opacity: 0;
+            border-radius: 10px;
+            transition: opacity 0.3s ease;
+        }
+
+        #team .image-container:hover .overlay {
+            opacity: 1;
+        }
+
+        /* Back to Top Button */
+        #backToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: black;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 10px 15px;
+            cursor: pointer;
+            display: none;
+        }
+
+        #backToTop:hover {
+            background: white;
+            color: black;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            .logo img {
+                height: 50px;
+            }
+
+            .banner .text-overlay h1 {
+                font-size: 3rem;
+            }
+
+            .gallery img {
+                width: 150px;
+                height: 200px;
+            }
+
+            #team .image-container {
+                width: 150px;
+                height: 170px;
+            }
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <nav>
+                <a href="#project" class="smooth-scroll">Project</a>
+                <a href="#gallery" class="smooth-scroll">Gallery</a>
+                <a href="#model" class="smooth-scroll">3D Model</a>
+            </nav>
+            <div class="logo">
+                <a href="#banner" class="smooth-scroll"><img src="media\campuscitylogo.png" alt="Logo"></a>
+            </div>
+            <nav>
+                <a href="#technology" class="smooth-scroll">Technology</a>
+                <a href="#team" class="smooth-scroll">Team</a>
+                <a href="#sponsor" class="smooth-scroll">Sponsor</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Banner -->
+    <div class="banner" id="banner">
+        <video autoplay loop muted playsinline>
+            <source src="media\videobanner.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="text-overlay">
+            <h1>La Carrera Panamericana<br>Autonomous Drive</h1>
+        </div>
+    </div>
+
+
+    <!-- Project Section -->
+    <section id="project">
+        <div class="video-background">
+            <video autoplay loop muted playsinline>
+                <source src="media\bannerfases.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="carrusel">
+            <div class="contenedor">
+                <div class="parrafo">La carrera panamericana autonomous drive is the first experimental project for autonomous vehicles on public roads in Mexico,encompassing a wide variety of routes and real-world driving conditions.<br>
+                    Designed and developed by Tecnológico de Monterrey in collaboration with Politecnico di Milano.</div>
+                <div class="parrafo">Phase 1<br>Route selection for La Carrera Panamericana 2025 in mixed mode (Autonomous and manual).</div>
+                <div class="parrafo">Phase 2<br>A six-month experimentation phase to parameterize the technology within the operational domain, addressing a wide range of extreme contexts throughout the entire route.</div>
+                <div class="parrafo">Phase 3<br>To undertake La Carrera Panamericana 2025 route in mixed mode.</div>
+            </div>
+            
+        </div>
+        <button class="boton izquierda" onclick="moverCarrusel(-1)">&lt;</button>
+        <button class="boton derecha" onclick="moverCarrusel(1)">&gt;</button>
+    </section>
+    
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2></h2>
+        <div class="gallery">
+            <img src="media\maseratirender1.png" alt="Gallery Image 1">
+            <img src="media\maseratirender2.png" alt="Gallery Image 2">
+            <img src="media\maseratirender3.png" alt="Gallery Image 3">
+            <img src="media\nev.png" alt="Gallery Image 4">
+            <img src="media\bocho1.png" alt="Gallery Image 5">
+            <img src="media\nevbocho.png" alt="Gallery Image 6">
+            <img src="media\bocho2.png" alt="Gallery Image 7">
+            <img src="media\maserati1.png" alt="Gallery Image 8">
+            <img src="media\maserati2.png" alt="Gallery Image 9">
+            <img src="media\maserati4.png" alt="Gallery Image 10">
+        </div>
+    </section>
+
+     <!-- Model Section -->
+     <section id="model">
+        <div class="sketchfab-embed-wrapper" style="position: relative; width: 100%; height: 100vh; overflow: hidden;">
+            <iframe title="Maserati Tec" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share style="width: 100%; height: 100%; border: 0;" src="https://sketchfab.com/models/6eaee0a6814f4e41a891c21364192956/embed?autospin=1&autostart=1&camera=0&transparent=1">
+            </iframe>
+        </div>              
+    </section>
+
+    <!-- Technology Section -->
+    <section id="technology" style="position: relative; overflow: hidden;">
+        <div class="video-background">
+            <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; filter: brightness(30%);">
+                <source src="media\videodatos.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <!-- Esquina superior izquierda -->
+         <p style="position: absolute; top: 20%; left: 15%; color: white; font-size: 2rem; font-weight: bold; text-align: center; max-width: 30%;">
+        The Localization Module<br>
+        Determines the vehicle's position on the defined trajectory using data from GPS, IMU, RTK, and LiDAR. It ensures precise navigation by fusing sensor data.
+         </p>
+    <!-- Esquina superior derecha -->
+         <p style="position: absolute; top: 20%; right: 15%; color: white; font-size: 2rem; font-weight: bold; text-align: center; max-width: 30%;">
+        The Perception Module<br>
+        Processes sensor data to identify the position, speed, and type of surrounding objects. This includes recognizing vehicles, pedestrians, and static elements like road signs.
+         </p>
+    <!-- Esquina inferior izquierda -->
+          <p style="position: absolute; bottom: 25%; left: 15%; color: white; font-size: 2rem; font-weight: bold; text-align: center; max-width: 30%;">
+        The Planning Algorithm<br>
+        The usage of advanced algorithms to ensure a safe and optimal path. Defines the ideal trajectory and recalculates it dynamically when obstacles are detected.
+         </p>
+    <!-- Esquina inferior derecha -->
+         <p style="position: absolute; bottom: 30%; right: 15%; color: white; font-size: 2rem; font-weight: bold; text-align: center; max-width: 30%;">
+        The Vehicle Control Module<br>
+        It manages acceleration, braking, and steering.
+         </p>
+    </section>
+    
+
+
+    <!-- Team Section -->
+    <section id="team">
+        <h2></h2>
+        <div class="gallery">
+            <div class="image-container">
+                <img src="media\lozoya.png" alt="Lozoya">
+                <div class="overlay">Jorge Lozoya<br>Team Leader</div>
+            </div>
+            <div class="image-container">
+                <img src="media\sergiosavaresi.png" alt="Sergio">
+                <div class="overlay">Sergio Savaresi<br>Team Leader</div>
+            </div>
+            <div class="image-container">
+                <img src="media\mariamarcello.png" alt="Maria">
+                <div class="overlay">Maria Marcello<br>Project Manager</div>
+            </div>  
+            <div class="image-container">
+                <img src="media\andrea.png" alt="Andrea">
+                <div class="overlay">Andrea Valderrama<br>Project Manager</div>
+            </div>
+            <div class="image-container">
+                <img src="media\tudon.png" alt="Tudon">
+                <div class="overlay">Carlos Tudón<br>Research Professor</div>
+            </div>
+            <div class="image-container">
+                <img src="media\albertolucchini.png" alt="Alberto">
+                <div class="overlay">Alberto Lucchini<br>System Integration</div>
+            </div>
+            <div class="image-container">
+                <img src="media\quihuis.png" alt="Quihuis">
+                <div class="overlay">Ricardo Quihuis<br>Technical Advisor</div>
+            </div>
+            <div class="image-container">
+                <img src="media\axel.png" alt="Axel">
+                <div class="overlay">Axel Mendoza<br>Project Specialist</div>
+            </div>
+            <div class="image-container">
+                <img src="media\ismael.png" alt="Ismael">
+                <div class="overlay">Ismael Vidal<br>Project Specialist</div>
+            </div>
+            <div class="image-container">
+                <img src="media\yuxian.png" alt="Yuxian">
+                <div class="overlay">Yuxian Li<br>Perception</div>
+            </div>
+            <div class="image-container">
+                <img src="media\pedro.png" alt="Pedro">
+                <div class="overlay">Pedro González<br>Localization</div>
+            </div>
+            <div class="image-container">
+                <img src="media\miguel.png" alt="Miguel">
+                <div class="overlay">Miguel Gutiérrez<br>Telemetry</div>
+            </div>
+            <div class="image-container">
+                <img src="media\luis.png" alt="Luis">
+                <div class="overlay">Luis Juárez<br>Mapping</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsor Section -->
+    <section id="sponsor" style="position: relative; height: 100vh; display: flex; justify-content: center; align-items: center;">
+        <h2> </h2>
+        <p style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 2rem; font-weight: bold; text-align: center; max-width: 30%;">Want to be one of our sponsors?</p>
+    </section>
+    
+
+    <!-- Fullscreen Image Modal -->
+    <div class="modal" id="imageModal">
+        <img src="" alt="Fullscreen Image">
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop">&uarr;</button>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('.smooth-scroll').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Active Link Indicator
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Image Modal Logic
+        const modal = document.getElementById('imageModal');
+        const modalImg = modal.querySelector('img');
+
+        document.querySelectorAll('.gallery img').forEach(img => {
+            img.addEventListener('click', () => {
+                modal.style.display = 'flex';
+                modalImg.src = img.src;
+            });
+        });
+
+        modal.addEventListener('click', () => { 
+            modal.style.display = 'none';
+            modalImg.src = '';
+        });
+    </script>
+
+    <script>
+        let index = 0;
+
+        function moverCarrusel(direccion) {
+        const contenedor = document.querySelector('.contenedor');
+        const parrafos = document.querySelectorAll('.parrafo');
+        index += direccion;
+
+        if (index < 0) {
+            index = parrafos.length - 1;
+        } else if (index >= parrafos.length) {
+            index = 0;
+        }
+
+        contenedor.style.transform = `translateX(-${index * 100}%)`;
+        }
+    </script>  
+</body>
+</html>
