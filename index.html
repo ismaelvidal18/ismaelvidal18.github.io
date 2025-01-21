@@ -20,32 +20,33 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 10px 20px;
+            padding: 0.7rem 1.25rem;
             background-color: black;
             position: fixed;
             width: 100%;
             z-index: 1000;
             box-sizing: border-box;
+            flex-wrap: wrap;
         }
 
         .header-content {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 50px;
+            gap: 3rem;
             flex-wrap: wrap;
         }
 
         .logo img {
-            height: 70px;
+            height: 4.3rem;
             cursor: pointer;
-            margin-right: 20px;
+            margin-right: 1.25rem;
         }
 
         nav {
             display: flex;
             flex-wrap: wrap;
-            gap: 25px;
+            gap: 1.4rem;
         }
 
         nav a {
@@ -53,21 +54,21 @@
             color: white;
             font-weight: bold;
             font-size: 1.2rem;
-            padding: 10px 15px;
+            padding: 0.7rem 0.9rem;
             text-align: center;
-            border-bottom: 2px solid transparent;
+            border-bottom: 0.2rem solid transparent;
             white-space: nowrap;
         }
 
         nav a:hover {
             background-color: white;
             color: black;
-            border-radius: 5px;
+            border-radius: 0.3rem;
             transition: 0.3s ease;
         }
 
         nav a.active {
-            border-bottom: 2px solid white;
+            border-bottom: 0.12rem solid white;
         }
 
         /* Main Banner */
@@ -84,13 +85,13 @@
             height: 100%;
             object-fit: cover;
             filter: brightness(40%);
-            position: absolute;
+            position: relative;
             top: 0;
             left: 0;
         }
 
         .banner .text-overlay {
-            position: absolute;
+            position: relative;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -116,10 +117,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         #project .video-background {
-            position: absolute;
+            position: relative;
             filter: brightness(30%);
             top: 0;
             left: 0;
@@ -140,35 +142,36 @@
             z-index: 1;
             text-align: center;
             color: white;
-            padding: 20px;
+            padding: 1.25rem;
         }
 
         #project h2 {
             font-size: 3rem;
-            margin-bottom: 20px;
+            margin-bottom: 1.25rem;
         }
 
         #project p {
             font-size: 2rem;
             font-family: 'Poppins', sans-serif;
-            max-width: 800px;
+            max-width: 100%;
             margin: 0 auto; 
         }
 
         .carrusel {
         width: 100%;
-        max-width: 1000px;
+        max-width: 100%;
         margin: auto;
         overflow: hidden;
         position: relative;
         }
         .contenedor {
         display: flex;
-        transition: transform 0.5s ease-in-out;
+        transition: transform 0.8s ease-in-out;
+        flex-wrap: wrap;
         }
         .parrafo {
         min-width: 100%;
-        padding: 20px;
+        padding: 1.25rem;
         box-sizing: border-box;
         text-align: center;
         font-family: 'Poppins', sans-serif;
@@ -176,17 +179,17 @@
         }
     
     .boton {
-    position: absolute;
+    position: relative;
     top: 50%;
     transform: translateY(-50%);
     background-color: transparent;
     color: white;
     border: none;
-    font-size: 36px;
-    width: 50px;
-    height: 50px;
+    font-size: 3rem;
+    width: 100%;
+    height: auto;
     text-align: center;
-    line-height: 50px;
+    line-height: 3rem;
     cursor: pointer;
     border-radius: 50%;
     z-index: 10;
@@ -198,18 +201,18 @@
     }
 
     .izquierda {
-        left: 200px; /* Moved closer to the left */
+        left: 15%; /* Moved closer to the left */
     }
 
     .derecha {
-        right: 200px; /* Moved closer to the right */
+        right: 15%; /* Moved closer to the right */
     }
 
         /* Section Styles */
         section {
-            padding: 100px 20px;
+            padding: 6rem 1.2rem;
             height: 100vh;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0.25rem 0.4rem rgba(0, 0, 0, 0.1);
         }
 
         #project, #gallery, #model, #technology, #team, #sponsor {
@@ -219,13 +222,13 @@
         section h2 {
             font-size: 3rem;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
         }
 
         section p {
             text-align: center;
             font-size: 1.5rem;
-            max-width: 800px;
+            max-width: 100%;
             margin: 0 auto;
         }
 
@@ -233,37 +236,38 @@
         .gallery {
             display: flex;
             justify-content: center;
-            gap: 50px;
+            gap: 3rem;
             flex-wrap: wrap;
         }
 
         .gallery img {
-            width: 300px;
-            height: 200px;
+            width: 100%;
+            height: auto;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: 0.7rem;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .gallery img:hover {
             transform: scale(1.1);
-            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.4);
         }
 
         /* Team Section Styles */
         #team .gallery {
             display: grid; /* Cambiar flex a grid para controlar la cantidad de imágenes por fila */
             grid-template-columns: repeat(4, 1fr); /* Esto asegura que haya 4 imágenes por fila */
-            gap: 20px; /* Espaciado entre las imágenes */
+            gap: 1.2rem; /* Espaciado entre las imágenes */
             justify-items: center;
+            flex-wrap: wrap;
         }
 
         #team .image-container {
             position: relative;
             width: 100%;
-            max-width: 150px; /* Ajustar el tamaño máximo de las imágenes */
-            height: 170px;
+            max-width: 100%; /* Ajustar el tamaño máximo de las imágenes */
+            height: auto;
             overflow: hidden; /* Para que las imágenes no se desborden */
         }
 
@@ -271,31 +275,32 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: 0.7rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animaciones igual a las de Gallery */
         }
 
         #team .image-container img:hover {
             transform: scale(1.1); /* Escalar la imagen al pasar el cursor */
-            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4); /* Efecto de sombra */
+            box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.4); /* Efecto de sombra */
         }
 
         #team .overlay {
-            position: absolute;
+            position: relative;
             font-family: 'Poppins', sans-serif;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: auto;
             background-color: rgba(0, 0, 0, 0.6);
             color: white;
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             text-align: center;
             font-size: 1rem;
             opacity: 0;
-            border-radius: 10px;
+            border-radius: 0.7rem;
             transition: opacity 0.3s ease;
         }
 
@@ -306,13 +311,13 @@
         /* Back to Top Button */
         #backToTop {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: black;
+            bottom: 1.25rem;
+            right: 1.25rem;
+            background: transparent;
             color: white;
             border: none;
             border-radius: 50%;
-            padding: 10px 15px;
+            padding: 0.7rem 0.9rem;
             cursor: pointer;
             display: none;
         }
@@ -339,14 +344,14 @@
         .modal img {
             max-width: 90%;
             max-height: 90%;
-            border-radius: 10px;
+            border-radius: 0.7rem;
         }
 
         footer {
             background-color: #222;
             color: #fff;
             text-align: center;
-            padding: 10px 20px;
+            padding: 0.7rem 1.25rem;
             font-size: 0.9rem;
         }
 
@@ -364,15 +369,15 @@
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
-                gap: 30px;
+                gap: 1.8rem;
             }
 
             nav {
-                gap: 15px;
+                gap: 0.9rem;
             }
 
             .logo img {
-                height: 50px;
+                height: auto;
             }
 
             .banner .text-overlay h1 {
@@ -380,15 +385,73 @@
             }
 
             .gallery img {
-                width: 150px;
-                height: 200px;
+                width: 100%;
+                height: auto;
             }
 
             #team .image-container {
-                width: 150px;
-                height: 170px;
+                width: 100%;
+                height: auto;
             }
         }
+
+            /* Mobile */
+    @media (max-width: 480px) {
+        body {
+            font-size: 0.8rem;
+            }
+
+        .header-content {
+            flex-direction: column;
+            }
+
+        .logo img {
+            height: 2.5rem;
+            }
+
+        .banner .text-overlay h1 {
+            font-size: 2rem;
+            }
+
+        .gallery img {
+            width: 100%; /* Imágenes a 100% del contenedor */
+         }
+
+        /* Ajusta otros elementos según sea necesario */
+    }
+
+    /* Tablet */
+    @media (max-width: 768px) {
+        .header-content {
+            flex-direction: column;
+            gap: 1.8rem;
+            }
+
+        .logo img {
+            height: auto;
+            }
+
+        .banner .text-overlay h1 {
+            font-size: 2.5rem;
+            }
+
+        .gallery img {
+            width: 80%; /* Ajuste de tamaño para tabletas */
+            }
+    }
+
+    /* Desktop */
+    @media (min-width: 1024px) {
+        .gallery img {
+            width: 100%; /* Ancho de las imágenes en pantallas grandes */
+            height: auto;
+            }
+
+        .banner .text-overlay h1 {
+            font-size: 4rem; /* Texto más grande en pantallas grandes */
+            }
+    }
+
 
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
     </style>
@@ -487,22 +550,22 @@
             </video>
         </div>
         <!-- Esquina superior izquierda -->
-         <p style="position: absolute; top: 20%; left: 15%; color: white; font-size: 1.5rem; font-weight: bold; text-align: center; max-width: 30%;">
+         <p style="position: relative; top: 20%; left: 15%; color: white; font-size: 1.5rem; font-weight: bold; text-align: center; max-width: 30%;">
         The Localization Module<br>
         Determines the vehicle's position on the defined trajectory using data from GPS, IMU, RTK, and LiDAR. It ensures precise navigation by fusing sensor data.
          </p>
     <!-- Esquina superior derecha -->
-         <p style="position: absolute; top: 20%; right: 15%; color: white; font-size: 1.5rem; font-weight: bold; text-align: center; max-width: 30%;">
+         <p style="position: relative; top: 20%; right: 15%; color: white; font-size: 1.5rem; font-weight: bold; text-align: center; max-width: 30%;">
         The Perception Module<br>
         Processes sensor data to identify the position, speed, and type of surrounding objects. This includes recognizing vehicles, pedestrians, and static elements like road signs.
          </p>
     <!-- Esquina inferior izquierda -->
-          <p style="position: absolute; bottom: 15%; left: 15%; color: white; font-size: 1.5rem; font-weight: bold; text-align: center; max-width: 30%;">
+          <p style="position: relative; bottom: 15%; left: 15%; color: white; font-size: 1.5rem; font-weight: bold; text-align: center; max-width: 30%;">
         The Planning Algorithm<br>
         The usage of advanced algorithms to ensure a safe and optimal path. Defines the ideal trajectory and recalculates it dynamically when obstacles are detected.
          </p>
     <!-- Esquina inferior derecha -->
-         <p style="position: absolute; bottom: 20%; right: 15%; color: white; font-size: 1.5rem; font-weight: bold; text-align: center; max-width: 30%;">
+         <p style="position: relative; bottom: 20%; right: 15%; color: white; font-size: 1.5rem; font-weight: bold; text-align: center; max-width: 30%;">
         The Vehicle Control Module<br>
         It manages acceleration, braking, and steering.
          </p>
@@ -570,9 +633,9 @@
     </section>
 
     <!-- Sponsor Section -->
-    <section id="sponsor" style="position: relative; height: 100vh; display: flex; justify-content: center; align-items: center;">
+    <section id="sponsor" style="position: relative; height: 100vh; display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
         <h2> </h2>
-        <p style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 2rem; font-weight: bold; text-align: center; max-width: 30%;">Join Us!</p>
+        <p style="position: relative; top: 40%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 2rem; font-weight: bold; text-align: center; max-width: 30%;">Join Us!</p>
     </section>
     
 
